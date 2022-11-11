@@ -2,16 +2,14 @@ package Day4;
 
 public class MinGap {
 	public static void main(String[] args) {
-		int[] inputArray = { 0, 5, 0, 3, 4, 6, 5, 9, 5 };
+		int[] inputArray = { 0, 1, 2, 9, 4, 6, 5, 9, 89 };
 		
 		int[] lastPositionPlus1Array = new int[maxValue(inputArray) + 1];
-		int[] minGapArray = new int[maxValue(inputArray) + 1];
 		int min = maxValue(inputArray);
 
 		for (int i = 0; i < inputArray.length; i++) {
 			if (lastPositionPlus1Array[inputArray[i]] != 0) {
-				minGapArray[inputArray[i]] = minExcept0(minGapArray[inputArray[i]], i + 1 - lastPositionPlus1Array[inputArray[i]]);
-				min = minExcept0(minGapArray[inputArray[i]],min);
+				min = Math.min(min, i + 1 - lastPositionPlus1Array[inputArray[i]]);
 			}
 			lastPositionPlus1Array[inputArray[i]] = i + 1;
 		}
