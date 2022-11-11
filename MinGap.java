@@ -18,14 +18,6 @@ public class MinGap {
 
 
 	}
-
-	public static int minExcept0(int a, int b) {
-		if (a == 0) {
-			return b;
-		}
-		return Math.min(a, b);
-
-	}
 	
 	public static int maxValue(int[] array) {
 		int max = array[0];
